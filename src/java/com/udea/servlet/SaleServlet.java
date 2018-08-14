@@ -41,7 +41,8 @@ public class SaleServlet extends HttpServlet {
         try {
             String action = request.getParameter("action");
             String url = "index.jsp";
-            if("list".equals("action")){
+            
+            if("list".equals(action)){
                 List<Sales> findAll = salesFacade.findAll();
                 request.getSession().setAttribute("sales", findAll);
                 url = "listSales.jsp";
@@ -53,7 +54,7 @@ public class SaleServlet extends HttpServlet {
                 s.setLicensePlate(request.getParameter("licensePlate"));
                 s.setPayment(request.getParameter("payment"));
                 salesFacade.create(s);
-                url = "SaleServlet?action=list";
+                url = "menu.jsp";
             }else if("delete".equals(action)){
                 String idBill = request.getParameter("idBill");
                 Sales s = salesFacade.find(idBill);

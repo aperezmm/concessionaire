@@ -16,8 +16,8 @@
         <h1>List customer</h1>
         <c:forEach var="c" items="${customers}">
             |${c.id}| |${c.username}| |${c.email}| |${c.names}|
-            |<a onclick="return confirm('Are you ready?')" href="CustomerServlet?action=delete&id=${c.id}">Delete</a>
-            <hr>
+            |<a onclick="return confirm('Are you ready?')"href="CustomerServlet?action=delete&id=${c.id}">Delete</a>|
+            <hr/>
         </c:forEach>
     </body>
 </html>

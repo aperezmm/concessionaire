@@ -4,6 +4,7 @@
     Author     : alejo
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,8 +17,9 @@
         <h1>List vehicles</h1>
         <c:forEach var="v" items="${vehicles}">
             |${v.licensePlate}| |${v.carBrand}| |${v.carModel}| |${v.price}| |<img src="${v.photo}"/>|
-            |<a onclick="return confirm('Are you sure?')" href="VehicleServlet?action=delete&id=${v.licensePlate}">Delete</a>
-            <hr>
+            |<a onclick="return confirm('Are you sure?')" href="VehicleServlet?action=delete&licensePlate=${v.licensePlate}">Delete</a>|
+            |<a onclick="return ('Edit')" href="VehicleServlet?action=edit&licensePlate=${v.licensePlate}">Edit</a>|
+            <hr/>
         </c:forEach>
     </body>
 </html>

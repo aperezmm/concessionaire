@@ -54,7 +54,7 @@ public class Vehicles implements Serializable {
     @Lob
     @Column(name = "photo")
     private byte[] photo;
-    @Size(max = 50)
+    @Size(max = 255)
     @Column(name = "routePhoto")
     private String routePhoto;
     @Basic(optional = false)
@@ -65,7 +65,7 @@ public class Vehicles implements Serializable {
 
     public Vehicles() {
     }
-
+    
     public Vehicles(String licensePlate) {
         this.licensePlate = licensePlate;
     }

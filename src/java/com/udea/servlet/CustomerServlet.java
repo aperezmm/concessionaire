@@ -65,15 +65,12 @@ public class CustomerServlet extends HttpServlet {
             a.setEmail(request.getParameter("email"));
             a.setCellPhone(request.getParameter("cellPhone"));
             customersFacade.create(a);
-            url = "login.jsp";
+            url = "menu.jsp";
         } else if("delete".equals(action)){
             String id = request.getParameter("id");
-            Customers a = customersFacade.find(Integer.valueOf(id));
+            Customers a = customersFacade.find(id);
             customersFacade.remove(a);
             url = "CustomerServlet?action=list";
-        } else if("logout".equals(action)){
-            request.getSession().removeAttribute("login");
-            url = "login.jsp";
         }
         response.sendRedirect(url);
     } finally{

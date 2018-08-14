@@ -55,7 +55,7 @@
                             <label><b>Vehicle photo:</b></label>
                         </th>
                         <th>
-                            <input type="file" class="form-control" name="photo" required=""/>
+                            <input type="file" class="form-control" name="photo" />
                         </th>
                     </tr>
                     

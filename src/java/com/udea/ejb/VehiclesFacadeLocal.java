@@ -22,7 +22,7 @@ public interface VehiclesFacadeLocal {
 
     void remove(Vehicles vehicles);
 
-    Vehicles find(Object id);
+    Vehicles find(Object licensePlate);
 
     List<Vehicles> findAll();
 

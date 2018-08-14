@@ -54,13 +54,15 @@ public class VehicleServlet extends HttpServlet {
                 v.setCarBrand(request.getParameter("carBrand"));
                 v.setCarModel(request.getParameter("carModel"));
                 v.setPrice(request.getParameter("price"));
-                Part _photo = request.getPart("photo");
+             /* Part _photo = request.getPart("photo");
                 try(InputStream is = _photo.getInputStream()){
                     byte[] photo = new byte[is.available()];
                     is.read(photo);
-                }
+                    is.close();
+                    v.setPhoto(photo);
+                } */ 
                 vehiclesFacade.create(v);
-                url = "VehicleServlet?action=list";
+                url = "menu.jsp";
             } else if("delete".equals(action)){
                 String licensePlate = request.getParameter("licensePlate");
                 Vehicles v = vehiclesFacade.find(licensePlate);

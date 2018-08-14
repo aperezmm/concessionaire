@@ -22,7 +22,7 @@ public interface SalesFacadeLocal {
 
     void remove(Sales sales);
 
-    Sales find(Object id);
+    Sales find(Object idBill);
 
     List<Sales> findAll();
 

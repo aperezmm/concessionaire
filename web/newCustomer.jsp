@@ -63,7 +63,7 @@
                     
                     <tr>
                         <td colspan="2">
-                            <input class="btn icon-btn btn-success" type="submit" name="action" value="Insert">
+                            <input class="btn icon-btn btn-success" type="submit" name="action" value="Insertar">
                             <span class="glyphicon glyphicon-ok-sign"/></span>
                             
                             <input class="btn btn-info btn-lg" type="reset" name="action" value="Reset">
