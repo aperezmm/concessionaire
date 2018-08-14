@@ -9,6 +9,7 @@ import com.udea.entity.Sales;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +28,15 @@ public class SalesFacade extends AbstractFacade<Sales> implements SalesFacadeLoc
 
     public SalesFacade() {
         super(Sales.class);
+    }
+
+    @Override
+    public boolean checkSale(String i) {
+        Query q = em.createQuery("Select a from Sales a where a.idBill=:i");
+        
+        q.setParameter("i",i);
+        
+        return q.getResultList().size()>0;
     }
     
 }

@@ -29,5 +29,7 @@ public interface VehiclesFacadeLocal {
     List<Vehicles> findRange(int[] range);
 
     int count();
+
+    boolean checkVehicle(String p);
     
 }

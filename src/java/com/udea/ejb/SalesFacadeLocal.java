@@ -29,5 +29,7 @@ public interface SalesFacadeLocal {
     List<Sales> findRange(int[] range);
 
     int count();
+
+    boolean checkSale(String i);
     
 }

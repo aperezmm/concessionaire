@@ -9,6 +9,7 @@ import com.udea.entity.Vehicles;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +28,15 @@ public class VehiclesFacade extends AbstractFacade<Vehicles> implements Vehicles
 
     public VehiclesFacade() {
         super(Vehicles.class);
+    }
+
+    @Override
+    public boolean checkVehicle(String p) {
+        Query q = em.createQuery("Select a from Vehicles a where a.licensePlate=:p");
+        
+        q.setParameter("p",p);
+        
+        return q.getResultList().size()>0;
     }
     
 }
