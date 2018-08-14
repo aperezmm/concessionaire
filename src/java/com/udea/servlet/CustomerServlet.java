@@ -71,6 +71,13 @@ public class CustomerServlet extends HttpServlet {
             Customers a = customersFacade.find(id);
             customersFacade.remove(a);
             url = "CustomerServlet?action=list";
+        } else if("edit".equals(action)){
+            Customers a = new Customers();
+            a.setEmail(request.getParameter("email"));
+            a.setUsername(request.getParameter("username"));
+            a.setPassword(request.getParameter("password"));
+            customersFacade.edit(a);
+            url = "menu.jsp";
         }
         response.sendRedirect(url);
     } finally{

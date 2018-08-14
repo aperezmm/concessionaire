@@ -21,5 +21,6 @@
             |<a onclick="return ('Edit')" href="VehicleServlet?action=edit&licensePlate=${v.licensePlate}">Edit</a>|
             <hr/>
         </c:forEach>
+        |<a href="VehicleServlet?action=list">Find a vehicle</a>|
     </body>
 </html>

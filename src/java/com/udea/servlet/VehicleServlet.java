@@ -68,6 +68,16 @@ public class VehicleServlet extends HttpServlet {
                 Vehicles v = vehiclesFacade.find(licensePlate);
                 vehiclesFacade.remove(v);
                 url ="VehicleServlet?action=list";
+            } else if("search".equals(action)){
+                String licensePlate = request.getParameter("licensePlate");
+                Vehicles v = vehiclesFacade.find(licensePlate);
+                url ="findVehicle.jsp";
+            } else if("edit".equals(action)){
+                Vehicles v = new Vehicles();
+                v.setCarModel(request.getParameter("carModel"));
+                v.setPrice(request.getParameter("price"));
+                vehiclesFacade.edit(v);
+                url = "menu.jsp";
             }
             response.sendRedirect(url);
         } finally {
